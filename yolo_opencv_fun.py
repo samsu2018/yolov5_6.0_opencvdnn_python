@@ -164,9 +164,9 @@ class yolov5():
             height = int((i[3]-wh[1])/ratio[1])
             conf = i[4]
             classId = int(i[5])
-            frame = self.drawPred(frame, classId, conf, left, top, left + width, top + height) # Sam update
+            frame = self.drawPred(frame, classId, conf, left, top, width, height)
             label = str(self.classes[classId])
-            nms_dets.append([label, conf, left, top, left + width, top + height, classId])
+            nms_dets.append([label, conf, left, top, width, height, classId])
         return nms_dets, frame
 
 
